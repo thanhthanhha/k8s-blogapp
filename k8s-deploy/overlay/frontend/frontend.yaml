@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: blog-app
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: frontend
+        ports:
+        - containerPort: 3000
+        env:
+        - name: BUILD_PROGRESS
+          value: plain
+        envFrom:
+        - configMapRef:
+            name: config-env
+  volumes:
+  - name: shared-volume
+    persistentVolumeClaim:
+      claimName: shared-volume-claim
+

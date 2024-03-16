@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: zabbix-agent-cm
+data:
+  zabbix.conf: |
+    # Base Zabbix configuration
+    Server=<ip>
+    ServerActive=<ip>:<port>
+    HostnameItem=system.run["echo pod-`/bin/hostname`"]
+    HostMetadataItem=system.run["echo `/bin/hostname`"]
+    HostInterfaceItem=system.run["echo `/bin/hostname`"]

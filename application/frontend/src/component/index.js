@@ -1,0 +1,11 @@
+export {default as Header} from './header';
+export {default as Form} from './form';
+export {default as WaitScreen} from './waitscreen';
+export {default as Card} from './card';
+export {default as Story} from'./story';
+export {default as Profile} from'./profile';
+export {default as PopUp} from './popup';
+export {default as HomCon} from './home';
+export {default as Footer} from './footer';
+export {default as Grid} from './grid';
+export {default as SearchCon} from './search';
